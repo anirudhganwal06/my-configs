@@ -1,0 +1,53 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true
+    },
+    "extends": "eslint:recommended",
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+        "ecmaVersion": 11,
+        "sourceType": "module"
+    },
+    "rules": {
+        "indent": [
+            "warn",
+            "tab"
+        ],
+        "linebreak-style": [
+            "warn",
+            "unix"
+        ],
+        "quotes": [
+            "warn",
+            "single"
+        ],
+        "semi": [
+            "warn",
+            "always"
+        ],
+        "no-unused-vars": "warn",
+        "no-multi-spaces": "warn",
+        "block-spacing": "warn",
+        "space-before-function-paren": [
+            "warn",
+            "never"
+        ],
+        "func-call-spacing": [
+            "warn",
+            "never"
+        ],
+        "object-curly-spacing": [
+            "warn",
+            "always"
+        ],
+        "space-before-blocks": "warn",
+        "space-in-parens": "warn",
+        "space-infix-ops": "warn",
+        "spaced-comment": "warn"
+    }
+}
