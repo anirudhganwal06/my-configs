@@ -46,6 +46,16 @@
 		"comma-style": "warn",
 		///////////// operators ////////////
 		"space-infix-ops": "warn",
+		"space-unary-ops": "warn",
+		"operator-linebreak": [
+			"warn",
+			"after",
+			{
+				"overrides": {
+					"=": "none"
+				}
+			}
+		],
 		///////////// comments /////////////
 		"spaced-comment": "warn",
 		///////////// functions ////////////
