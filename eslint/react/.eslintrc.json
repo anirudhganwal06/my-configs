@@ -58,7 +58,6 @@
         "space-in-parens": "warn",
         "space-infix-ops": "warn",
         "spaced-comment": "warn",
-        // React
         "react/prop-types": "off"
     },
     "root": true
