@@ -44,7 +44,7 @@
 		"comma-dangle": "warn",
 		"comma-spacing": "warn",
 		"comma-style": "warn",
-		///////////// operators ////////////
+		/////////// operators ////////////
 		"space-infix-ops": "warn",
 		"space-unary-ops": "warn",
 		"operator-linebreak": [
@@ -56,9 +56,9 @@
 				}
 			}
 		],
-		///////////// comments /////////////
+		/////////// comments /////////////
 		"spaced-comment": "warn",
-		///////////// functions ////////////
+		/////////// functions ////////////
 		"func-call-spacing": [
 			"warn",
 			"never"
