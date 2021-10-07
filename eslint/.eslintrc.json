@@ -14,7 +14,7 @@
 		"sourceType": "module"
 	},
 	"rules": {
-		///////////// general //////////////
+		/////////// general //////////////
 		"indent": [
 			"warn",
 			"tab"
@@ -33,12 +33,12 @@
 		"no-multi-spaces": "warn",
 		"no-trailing-spaces": "warn",
 		"no-unused-vars": "warn",
-		///////////// strings //////////////
+		/////////// strings //////////////
 		"quotes": [
 			"warn",
 			"single"
 		],
-		///////////// delimiters ///////////
+		/////////// delimiters ///////////
 		"semi-spacing": "warn",
 		"semi-style": "warn",
 		"comma-dangle": "warn",
