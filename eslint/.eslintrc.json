@@ -67,7 +67,7 @@
 			"warn",
 			"never"
 		],
-		///////////// arrays ///////////////
+		/////////// arrays ///////////////
 		"array-bracket-spacing": "warn",
 		"array-bracket-newline": [
 			"warn",
@@ -81,7 +81,7 @@
 				"multiline": true
 			}
 		],
-		///////////// objects //////////////
+		/////////// objects //////////////
 		"key-spacing": "warn",
 		"object-curly-spacing": "warn",
 		"object-curly-newline": [
