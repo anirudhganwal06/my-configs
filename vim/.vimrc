@@ -1,30 +1,34 @@
 " DON'T TOUCH {{{
 set nocompatible
 filetype off
+let $BASH_ENV = '~/.bashrc'
 " }}}
 
 " Installed Plugins {{{
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/bundle')
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'itchyny/lightline.vim'
-Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plugin 'junegunn/fzf.vim'
-Plugin 'preservim/nerdtree'
-Plugin 'ycm-core/YouCompleteMe'
-Plugin 'rhysd/vim-clang-format'
-Plugin 'frazrepo/vim-rainbow'
-Plugin 'google/vim-searchindex'
-Plugin 'tpope/vim-commentary'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'tpope/vim-surround'
-Plugin 'kaicataldo/material.vim'
-Plugin 'joonty/vim-do'
-Plugin 'tpope/vim-fugitive'
+Plug 'itchyny/lightline.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'preservim/nerdtree'
+" Plug 'ycm-core/YouCompleteMe'
+Plug 'rhysd/vim-clang-format'
+Plug 'frazrepo/vim-rainbow'
+Plug 'google/vim-searchindex'
+Plug 'tpope/vim-commentary'
+Plug 'jiangmiao/auto-pairs'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-surround'
+Plug 'kaicataldo/material.vim'
+Plug 'joonty/vim-do'
+Plug 'tpope/vim-fugitive'
+Plug 'mhinz/vim-signify'
+Plug 'itchyny/vim-gitbranch'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'OmniSharp/omnisharp-vim'
+Plug 'ryanoasis/vim-devicons'
 
-call vundle#end()
+call plug#end()
 filetype plugin indent on
 " }}}
 
@@ -40,9 +44,13 @@ let g:lightline = {
 let g:lightline.component = {
             \    'totallines': '%3L' 
             \    }
+let g:lightline.component_function = {
+            \ 'gitbranch': 'gitbranch#name'
+            \ }
 let g:lightline.active = {
             \ 'left': [ [ 'mode', 'paste' ],
-            \           [ 'readonly', 'filename', 'modified' ] ],
+            \           [ 'readonly', 'filename', 'modified' ],
+            \           [ 'gitbranch' ] ],
             \ 'right': [ [ 'lineinfo', 'totallines' ],
             \            [ 'fileformat', 'fileencoding', 'filetype' ] ] }
 let g:lightline.inactive = {
@@ -68,6 +76,13 @@ if (has('termguicolors'))
   set termguicolors
 endif
 
+""""" coc.nvim
+let g:coc_global_extensions = ['coc-css', 'coc-clangd']
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 " }}}
 
 " Vimscript File Settings {{{
@@ -154,6 +169,8 @@ hi YcmErrorSection ctermbg=88
 hi YcmWarningSection ctermbg=238
 set nowrap
 let g:loaded_matchparen = 1
+set wildmode=full
+set wildmenu
 " }}}
 
 " Autosave {{{
@@ -161,4 +178,14 @@ set hidden
 set autoread
 :au FocusLost * silent! wa
 set autowriteall
+" }}}
+
+" Setting temporary files' paths {{{
+set directory=~/tmp/vim//
+set backupdir=~/tmp/vim//
+set undodir=~/tmp/vim//
+" }}}
+
+" Sourcing Files {{{
+source ~/.config/vim/coc.vim
 " }}}
