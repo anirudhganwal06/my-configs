@@ -4,6 +4,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdtree'
+" Plug 'calviken/vim-gdscript3'
 " Plug 'ycm-core/YouCompleteMe'
 " Plug 'rhysd/vim-clang-format'
 " Plug 'sbdchd/neoformat'
@@ -21,7 +22,8 @@ Plug 'mhinz/vim-signify'
 Plug 'itchyny/vim-gitbranch'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'OmniSharp/omnisharp-vim'
-" Plug 'ryanoasis/vim-devicons'
+Plug 'ryanoasis/vim-devicons'
+Plug 'habamax/vim-godot'
 
 call plug#end()
 filetype plugin indent on
