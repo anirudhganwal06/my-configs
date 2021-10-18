@@ -2,7 +2,6 @@ set nocompatible
 filetype off
 let $BASH_ENV = '~/.bashrc'
 
-" Installed Plugins {{{
 call plug#begin('~/.vim/bundle')
 
 Plug 'itchyny/lightline.vim'
@@ -28,9 +27,7 @@ Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 filetype plugin indent on
-" }}}
 
-" Plugins Configurations {{{
 
 """"" lightline
 let g:lightline = {
@@ -81,7 +78,7 @@ inoremap <silent><expr> <TAB>
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-" }}}
+
 
 " Vimscript File Settings {{{
 augroup filetype_vim
