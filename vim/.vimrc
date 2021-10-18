@@ -124,7 +124,6 @@ command Reload :source $MYVIMRC
 command Vimrc :e $MYVIMRC
 
 
-" Indentation {{{
 set expandtab
 set shiftwidth=4
 set softtabstop=4
@@ -139,13 +138,11 @@ set backspace=indent,eol,start
 "augroup End
 
 
-" Searching {{{
 set hlsearch
 set ignorecase
 set smartcase
-" }}}
 
-" Custom UI {{{ 
+
 syntax enable
 set laststatus=2
 set ruler
@@ -165,21 +162,18 @@ set nowrap
 let g:loaded_matchparen = 1
 set wildmode=full
 set wildmenu
-" }}}
 
-" Autosave {{{
+
 set hidden
 set autoread
 :au FocusLost * silent! wa
 set autowriteall
-" }}}
 
-" Setting temporary files' paths {{{
+
 set directory=~/tmp/vim//
 set backupdir=~/tmp/vim//
 set undodir=~/tmp/vim//
-" }}}
 
-" Sourcing Files {{{
+
 source ~/.config/vim/coc.vim
-" }}}
+
