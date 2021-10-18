@@ -80,14 +80,13 @@ inoremap <silent><expr> <TAB>
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 
-" Vimscript File Settings {{{
+
 augroup filetype_vim
     autocmd!
     autocmd FileType vim setlocal foldmethod=marker
 augroup END
-" }}}
 
-" Key Mappings {{{
+
 """"" Leader Key """""
 nnoremap <space> <nop>
 let mapleader = " "
@@ -123,7 +122,7 @@ nnoremap <leader>r :wa<cr> :!g++ % && ./a.out<cr>
 """"" Custom commands """""
 command Reload :source $MYVIMRC
 command Vimrc :e $MYVIMRC
-" }}}
+
 
 " Indentation {{{
 set expandtab
@@ -133,12 +132,12 @@ set autoindent
 set backspace=indent,eol,start
 "set spell spelllang=en_us
 
-""""" Auto Indent before saving a buffer
+
 "augroup autoindent
 "    au!
 "    autocmd BufWritePre * :normal migg=G`i 
 "augroup End
-" }}}
+
 
 " Searching {{{
 set hlsearch
