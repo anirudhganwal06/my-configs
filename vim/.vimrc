@@ -1,8 +1,6 @@
-" DON'T TOUCH {{{
 set nocompatible
 filetype off
 let $BASH_ENV = '~/.bashrc'
-" }}}
 
 " Installed Plugins {{{
 call plug#begin('~/.vim/bundle')
