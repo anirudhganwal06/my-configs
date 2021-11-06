@@ -24,10 +24,13 @@ augroup END
 """"" Leader Key """""
 nnoremap <space> <nop>
 let mapleader = " "
+let maplocalleader = ";"
 
 """"" Enter normal mode """""
 inoremap jk <esc>
 inoremap kj <esc>
+cnoremap jk <esc> 
+cnoremap kj <esc>
 
 """"" Aliases """""
 nnoremap <leader>o o<esc>
@@ -36,8 +39,6 @@ nnoremap <leader>h :wincmd h<cr>
 nnoremap <leader>j :wincmd j<cr>
 nnoremap <leader>k :wincmd k<cr>
 nnoremap <leader>l :wincmd l<cr>
-nnoremap <leader>g :tabp<cr>
-nnoremap <leader>; :tabn<cr>
 nnoremap <leader>f :Files<cr>
 nnoremap <leader>b :Buffer<cr>
 nnoremap <leader>t :NERDTree<cr>
@@ -45,13 +46,14 @@ nnoremap <leader><tab> :vertical terminal<cr>
 nnoremap <leader>i :ALEFix<cr>
 vnoremap <leader>y "+y
 nnoremap <leader>p "+p
-vnoremap <leader>Y "+Y
 nnoremap <leader>P "+P
 nnoremap <leader>/ <c-v>
 vnoremap q :Commentary<cr>
 nnoremap <leader>q :Commentary<cr>
 nnoremap <tab> <C-^>
-nnoremap <leader>r :wa<cr> :!g++ % && ./a.out<cr>
+nnoremap <leader>c :CocCommand<space>
+nnoremap <leader>; :ALEDetail<cr>
+
 
 """"" Custom commands """""
 command! Reload :source $MYVIMRC
@@ -66,10 +68,11 @@ set autoindent
 set backspace=indent,eol,start
 "set spell spelllang=en_us
 
-""""" Auto Indent before saving a buffer
+autocmd FileType dart setlocal shiftwidth=2 softtabstop=2
+
 "augroup autoindent
 "    au!
-"    autocmd BufWritePre * :normal migg=G`i 
+"    autocmd BufWritePre * :normal migg=G`i
 "augroup End
 " }}}
 
@@ -79,7 +82,7 @@ set ignorecase
 set smartcase
 " }}}
 
-" Custom UI {{{ 
+" Custom UI & Options {{{
 syntax enable
 set laststatus=2
 set ruler
@@ -100,6 +103,10 @@ let g:loaded_matchparen = 1
 set wildmode=full
 set wildmenu
 set completeopt-=preview
+
+autocmd FileType qf setlocal wrap
+filetype plugin on
+
 " }}}
 
 " Autosave {{{
@@ -113,8 +120,4 @@ set autowriteall
 set directory=~/tmp/vim//
 set backupdir=~/tmp/vim//
 set undodir=~/tmp/vim//
-" }}}
-
-" Sourcing Files {{{
-source ~/.config/vim/coc.vim
 " }}}
