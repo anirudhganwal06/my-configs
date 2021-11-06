@@ -24,6 +24,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'OmniSharp/omnisharp-vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'habamax/vim-godot'
+Plug 'dart-lang/dart-vim-plugin'
 
 call plug#end()
 filetype plugin indent on
