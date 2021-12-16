@@ -29,10 +29,10 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Mappings for scrolling up and down in floating window
 if has('nvim-0.4.0') || has('patch-8.2.0750')
-  nnoremap <silent><nowait><expr> <C-j> coc#float#has_scroll() ? coc#float#scroll(1, 2) : "\<C-j>"
-  nnoremap <silent><nowait><expr> <C-k> coc#float#has_scroll() ? coc#float#scroll(0, 2) : "\<C-k>"
-  inoremap <silent><nowait><expr> <C-k> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1, 2)\<cr>" : "\<Right>"
-  inoremap <silent><nowait><expr> <C-j> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0, 2)\<cr>" : "\<Left>"
+  nnoremap <silent><nowait><expr> <c-j> coc#float#has_scroll() ? coc#float#scroll(1, 2) : "\<c-j>"
+  nnoremap <silent><nowait><expr> <c-k> coc#float#has_scroll() ? coc#float#scroll(0, 2) : "\<c-k>"
+  inoremap <silent><nowait><expr> <C-k> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1, 2)\<cr>" : "\<C-k>"
+  inoremap <silent><nowait><expr> <C-j> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0, 2)\<cr>" : "\<C-j>"
   vnoremap <silent><nowait><expr> <C-k> coc#float#has_scroll() ? coc#float#scroll(1, 2) : "\<C-k>"
   vnoremap <silent><nowait><expr> <C-j> coc#float#has_scroll() ? coc#float#scroll(0, 2) : "\<C-j>"
   nnoremap <silent><nowait><expr> <C-l> coc#float#has_scroll() ? coc#float#close_all() : "\<C-l>"

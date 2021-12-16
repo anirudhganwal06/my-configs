@@ -1,7 +1,10 @@
+" DON'T TOUCH {{{
 set nocompatible
 filetype off
 let $BASH_ENV = '~/.bashrc'
+" }}}
 
+" Installed Plugins {{{
 call plug#begin('~/.vim/bundle')
 
 Plug 'itchyny/lightline.vim'
@@ -23,11 +26,13 @@ Plug 'mhinz/vim-signify'
 Plug 'itchyny/vim-gitbranch'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'OmniSharp/omnisharp-vim'
-Plug 'ryanoasis/vim-devicons'
+" Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 filetype plugin indent on
+" }}}
 
+" Plugins Configurations {{{
 
 """"" lightline
 let g:lightline = {
@@ -73,20 +78,21 @@ endif
 
 """"" coc.nvim
 let g:coc_global_extensions = ['coc-css', 'coc-clangd']
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+" inoremap <silent><expr> <TAB>
+"       \ pumvisible() ? "\<C-n>" :
+"       \ <SID>check_back_space() ? "\<TAB>" :
+"       \ coc#refresh()
+" inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+" }}}
 
-
-
+" Vimscript File Settings {{{
 augroup filetype_vim
     autocmd!
     autocmd FileType vim setlocal foldmethod=marker
 augroup END
+" }}}
 
-
+" Key Mappings {{{
 """"" Leader Key """""
 nnoremap <space> <nop>
 let mapleader = " "
@@ -122,8 +128,9 @@ nnoremap <leader>r :wa<cr> :!g++ % && ./a.out<cr>
 """"" Custom commands """""
 command Reload :source $MYVIMRC
 command Vimrc :e $MYVIMRC
+" }}}
 
-
+" Indentation {{{
 set expandtab
 set shiftwidth=4
 set softtabstop=4
@@ -131,18 +138,20 @@ set autoindent
 set backspace=indent,eol,start
 "set spell spelllang=en_us
 
-
+""""" Auto Indent before saving a buffer
 "augroup autoindent
 "    au!
 "    autocmd BufWritePre * :normal migg=G`i 
 "augroup End
+" }}}
 
-
+" Searching {{{
 set hlsearch
 set ignorecase
 set smartcase
+" }}}
 
-
+" Custom UI {{{ 
 syntax enable
 set laststatus=2
 set ruler
@@ -162,18 +171,21 @@ set nowrap
 let g:loaded_matchparen = 1
 set wildmode=full
 set wildmenu
+" }}}
 
-
+" Autosave {{{
 set hidden
 set autoread
 :au FocusLost * silent! wa
 set autowriteall
+" }}}
 
-
+" Setting temporary files' paths {{{
 set directory=~/tmp/vim//
 set backupdir=~/tmp/vim//
 set undodir=~/tmp/vim//
+" }}}
 
-
+" Sourcing Files {{{
 source ~/.config/vim/coc.vim
-
+" }}}

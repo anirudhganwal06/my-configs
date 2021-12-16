@@ -6,7 +6,8 @@ let g:ale_linters = {
 \   'html': ['prettier'],
 \   'css': ['prettier'],
 \   'json': ['prettier'],
-\   'javascript': ['eslint']
+\   'javascript': ['eslint'],
+\	'python': ['autopep8']
 \}
 
 " Fixers to use for each filetype
@@ -19,6 +20,7 @@ let g:ale_fixers = {
 \   'json': ['prettier'],
 \   'javascript': ['eslint'],
 \   'dart': ['dartfmt'],
+\	'python': ['autopep8'],
 \   '*': ['remove_trailing_lines', 'trim_whitespace']
 \}
 

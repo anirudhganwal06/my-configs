@@ -10,5 +10,6 @@
     "coc.prefences.hoverTarget": "echo",
     "coc.prefences.hoverTarget": "preview",
     "suggest.floatEnable": true,
-    "diagnostic.errorSign": "✘"
+    "diagnostic.errorSign": "✘",
+    "python.jediEnabled": false
 }

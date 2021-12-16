@@ -14,6 +14,7 @@ source $HOME/.config/nvim/plugs/vim-rainbow.vim
 source $HOME/.config/nvim/plugs/material.vim.vim
 source $HOME/.config/nvim/plugs/coc.nvim.vim
 source $HOME/.config/nvim/plugs/ale.vim
+source $HOME/.config/nvim/plugs/nvim-treesitter.vim
 
 " Key Mappings {{{
 
@@ -125,6 +126,8 @@ let g:loaded_matchparen = 1
 set completeopt-=preview
 " Loads the ftplugin/<filetype>.vim file when a file of <filetype> is edited
 filetype plugin on
+" Swap file will be written to disk every 100ms
+set updatetime=100
 
 " }}}
 
@@ -138,7 +141,7 @@ set autoread
 " Save all modified buffers when Vim loses focus
 autocmd FocusLost * silent! wa
 " Save buffer when it gets hidden
-autocmd BufHidden * w
+" autocmd BufHidden * w
 " Save modified buffers when many operations are performed like exiting vim
 set autowriteall 
 
