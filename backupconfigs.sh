@@ -10,10 +10,13 @@ cd ~/my-configs
 # Files to backup -------------------------------------------------------------
 
 # bash
-cp ~/{.bash_aliases,.bash_logout,.bashrc} bash
+cp ~/{.bash_logout,.bashrc} bash
 
 # zsh
 cp ~/.zshrc zsh
+
+# aliases
+cp ~/.aliases aliases
 
 # eslint
 cp ~/.eslintrc.json eslint
