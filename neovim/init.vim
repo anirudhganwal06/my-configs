@@ -71,10 +71,6 @@ inoremap <silent><A-k> <Esc>:m .-2<CR>==gi|		" Move line up
 inoremap <silent><A-j> <Esc>:m .+1<CR>==gi|		" Move line down
 vnoremap <silent><A-k> :m '<-2<CR>gv=gv|		" Move selected lines up
 vnoremap <silent><A-j> :m '>+1<CR>gv=gv|		" Move selected lines down
-nnoremap <C-Up> :resize +1<cr>
-nnoremap <C-Down> :resize -1<cr>
-nnoremap <C-Left> :vertical resize -1<cr>
-nnoremap <C-Right> :vertical resize +1<cr>
 
 """"" Custom commands """""
 " command! Reload :source $MYVIMRC
@@ -113,7 +109,7 @@ set smartcase
 syntax enable							" Enables syntax highlighting
 set laststatus=2						" Show status line for each window
 set number								" Show line number in front of each line
-set norelativenumber					" Show line number relative to the line number of cursor
+set relativenumber						" Show line number relative to the line number of cursor
 set mouse=a                             " Enables the use of mouse in all modes
 set title								" Set the title of the window
 set background=dark						" Set colorscheme according to the background that's provided      
