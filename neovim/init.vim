@@ -4,6 +4,11 @@ filetype on
 let $BASH_ENV = '~/.bashrc'
 " }}}
 
+""""" Setting Leader Key """""
+nnoremap <space> <nop>
+let mapleader = " "
+let maplocalleader = ";"
+
 " Sourcing the file where all the installed plugins are listed
 source $HOME/.config/nvim/plugins.vim
 
@@ -25,11 +30,6 @@ source $HOME/.config/nvim/plugs/vim-rainbow.vim
 " vnoremap : Visual mode key mappings
 " cnoremap : Command mode key mappings
 " tnoremap : Terminal mode key mappings
-
-""""" Leader Key """""
-nnoremap <space> <nop>
-let mapleader = " "
-let maplocalleader = ";"
 
 """"" Enter normal mode """""
 inoremap jk <esc>
@@ -105,41 +105,25 @@ set smartcase
 
 " Custom UI & Options {{{
 
-" Enables syntax highlighting
-syntax enable
-" Show status line for each window
-set laststatus=2
-" Show line number in front of each line
-set number
-" Show line number relative to the line number of cursor
-set relativenumber
-" Enables the use of mouse in all modes
-set mouse=a
-" Set the title of the window
-set title
-" Set colorscheme according to the background that's provided
-set background=dark
-" Puts the new split window on the right side of the current window
-set splitright
-" Highlights the lint on which cursor is
-set cursorline
-" Customizing the color of cursor and cursorline
-hi CursorLine cterm=none ctermbg=233
-hi Cursor cterm=none ctermbg=234
-" Customizing the color of the selected text in visual mode
-hi Visual cterm=none ctermbg=235
-" Customizing the color of error and warning lines
-hi YcmErrorSection ctermbg=88
-hi YcmWarningSection ctermbg=238
-" Long lines are not wrapped
-set nowrap
-let g:loaded_matchparen = 1
-" Don't show preview in another window
-set completeopt-=preview
-" Loads the ftplugin/<filetype>.vim file when a file of <filetype> is edited
-filetype plugin on
-" Swap file will be written to disk every 100ms
-set updatetime=100
+
+syntax enable							" Enables syntax highlighting
+set laststatus=2						" Show status line for each window
+set number								" Show line number in front of each line
+set norelativenumber					" Show line number relative to the line number of cursor
+set mouse=a                             " Enables the use of mouse in all modes
+set title								" Set the title of the window
+set background=dark						" Set colorscheme according to the background that's provided      
+set splitright							" Puts the new split window on the right side of the current window
+set cursorline							" Highlights the lint on which cursor is                           
+hi CursorLine cterm=none ctermbg=233	" Customizing the color of cursor
+hi Cursor cterm=none ctermbg=234		" Customizing the color of cursorline                                                                                        
+hi Visual cterm=none ctermbg=235		" Customizing the color of the selected text in visual mode        
+hi YcmErrorSection ctermbg=88           " Customizing the color of error lines                 
+hi YcmWarningSection ctermbg=238		" Customizing the color of warning lines                                                                                    
+set nowrap								" Long lines are not wrapped                                       
+set completeopt-=preview				" Don't show preview in another window                             
+filetype plugin on						" Loads the ftplugin/<filetype>.vim file when a file of <filetype> is edited
+set updatetime=100                      " Swap file will be written to disk every 100ms                             
 
 " }}}
 
