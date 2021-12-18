@@ -37,32 +37,34 @@ cnoremap kj <esc>
 tnoremap jk <C-\><C-n>
 tnoremap kj <C-\><C-n>
 
+" Hello there
 """"" Aliases """""
-nnoremap <leader>o o<esc>
-nnoremap <leader>u O<esc>
-nnoremap <leader>h :wincmd h<cr>
-nnoremap <leader>j :wincmd j<cr>
-nnoremap <leader>k :wincmd k<cr>
-nnoremap <leader>l :wincmd l<cr>
-nnoremap <leader>f :Files<cr>
-nnoremap <leader>b :Buffer<cr>
-nnoremap <leader>t :NERDTree<cr>
-nnoremap <leader><tab> :vertical :terminal<cr>
-nnoremap <leader>i :ALEFix<cr>
-vnoremap <leader>y "+y
-nnoremap <leader>p "+p
-nnoremap <leader>P "+P
-nnoremap <leader>/ <c-v>
-vnoremap q :Commentary<cr>
-nnoremap <leader>q :Commentary<cr>
-nnoremap <tab> <C-^>
-nnoremap <leader>c :CocCommand<space>
-nnoremap <leader>; :ALEDetail<cr>
-
+nnoremap <leader>o o<esc>|						" Create new line below without exiting normal mode
+nnoremap <leader>u O<esc>|						" Create new line above without exiting normal mode 
+nnoremap <leader>h :wincmd h<cr>|				" Go to the left window
+nnoremap <leader>j :wincmd j<cr>|				" Go to the down window
+nnoremap <leader>k :wincmd k<cr>|				" Go to the up window
+nnoremap <leader>l :wincmd l<cr>|				" Go to the right window
+nnoremap <leader>f :Files<cr>|					" Open floating window for FZF file search
+nnoremap <leader>b :Buffer<cr>|					" Open floating window for FZF buffer search 
+nnoremap <leader>t :NERDTree<cr>|				" Open NERDTree
+nnoremap <leader><tab> :vertical :terminal<cr>|	" Open a new terminal in vertical split
+nnoremap <leader>i :ALEFix<cr>|					" Fix code formatting
+vnoremap <leader>y "+y|							" Copy text to '+' register (Clipboard)
+nnoremap <leader>p "+p|							" Paste text on next character/line from '+' register (Clipboard)
+nnoremap <leader>P "+P|							" Paste text on the current character from '+' register (Clipboard)
+nnoremap <leader>/ <c-v>|						" Enter Visual Block mode
+vnoremap q :Commentary<cr>|						" Comment the selected line in visual mode
+nnoremap <leader>q :Commentary<cr>|				" Comment the current line in normal mode
+nnoremap <tab> <C-^>|							" Switch between recently opened buffer
+nnoremap <leader>c :CocCommand<space>|			" Shortcut for writing ':CocCommand '
+nnoremap <leader>; :ALEDetail<cr>|				" Show ALE linting message(info/warning/error) in floating window
+nnoremap <leader>r :source $MYVIMRC<cr>|		" Source Vim config
+nnoremap <leader>v :e $MYVIMRC<cr>|				" Open $MYVIMRC
 
 """"" Custom commands """""
-command! Reload :source $MYVIMRC
-command! Vimrc :e $MYVIMRC
+" command! Reload :source $MYVIMRC
+" command! Vimrc :e $MYVIMRC
 
 " }}}
 

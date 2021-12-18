@@ -5,7 +5,7 @@ let g:lightline = {
                 \       }
                 \ }
 let g:lightline.component = {
-            \    'totallines': '%3L' 
+            \    'totallines': '%3L'
             \    }
 let g:lightline.component_function = {
             \ 'gitbranch': 'gitbranch#name'
@@ -15,7 +15,7 @@ let g:lightline.active = {
             \           [ 'readonly', 'filename', 'modified' ],
             \           [ 'gitbranch' ] ],
             \ 'right': [ [ 'lineinfo', 'totallines' ],
-            \            [ 'fileformat', 'fileencoding', 'filetype' ] ] }
+            \            [ 'filetype' ] ] }
 let g:lightline.inactive = {
             \ 'left': [ [ 'filename' ] ],
             \ 'right': [ [ 'lineinfo' ],
@@ -25,4 +25,3 @@ let g:lightline.inactive = {
 function! FilenameForLightline()
     return expand('%')
 endfunction
-
