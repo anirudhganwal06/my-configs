@@ -28,6 +28,7 @@ Plug 'habamax/vim-godot'
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'honza/vim-snippets'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'simeji/winresizer'
 
 call plug#end()
 filetype plugin indent on

@@ -22,6 +22,7 @@ source $HOME/.config/nvim/plugs/nerdtree.vim
 source $HOME/.config/nvim/plugs/nvim-treesitter.vim
 source $HOME/.config/nvim/plugs/vim-fugitive.vim
 source $HOME/.config/nvim/plugs/vim-rainbow.vim
+source $HOME/.config/nvim/plugs/winresizer.vim
 
 " Key Mappings {{{
 
@@ -70,7 +71,10 @@ inoremap <silent><A-k> <Esc>:m .-2<CR>==gi|		" Move line up
 inoremap <silent><A-j> <Esc>:m .+1<CR>==gi|		" Move line down
 vnoremap <silent><A-k> :m '<-2<CR>gv=gv|		" Move selected lines up
 vnoremap <silent><A-j> :m '>+1<CR>gv=gv|		" Move selected lines down
-
+nnoremap <C-Up> :resize +1<cr>
+nnoremap <C-Down> :resize -1<cr>
+nnoremap <C-Left> :vertical resize -1<cr>
+nnoremap <C-Right> :vertical resize +1<cr>
 
 """"" Custom commands """""
 " command! Reload :source $MYVIMRC
