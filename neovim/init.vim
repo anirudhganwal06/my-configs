@@ -8,13 +8,15 @@ let $BASH_ENV = '~/.bashrc'
 source $HOME/.config/nvim/plugins.vim
 
 " Sourcing the files for the configuration of individual plugins
+source $HOME/.config/nvim/plugs/ale.vim
+source $HOME/.config/nvim/plugs/coc.nvim.vim
 source $HOME/.config/nvim/plugs/fzf.vim
 source $HOME/.config/nvim/plugs/lightline.vim
-source $HOME/.config/nvim/plugs/vim-rainbow.vim
 source $HOME/.config/nvim/plugs/material.vim.vim
-source $HOME/.config/nvim/plugs/coc.nvim.vim
-source $HOME/.config/nvim/plugs/ale.vim
+source $HOME/.config/nvim/plugs/nerdtree.vim
 source $HOME/.config/nvim/plugs/nvim-treesitter.vim
+source $HOME/.config/nvim/plugs/vim-fugitive.vim
+source $HOME/.config/nvim/plugs/vim-rainbow.vim
 
 " Key Mappings {{{
 
@@ -40,14 +42,15 @@ tnoremap kj <C-\><C-n>
 " Hello there
 """"" Aliases """""
 nnoremap <leader>o o<esc>|						" Create new line below without exiting normal mode
-nnoremap <leader>u O<esc>|						" Create new line above without exiting normal mode 
+nnoremap <leader>u O<esc>|						" Create new line above without exiting normal mode
 nnoremap <leader>h :wincmd h<cr>|				" Go to the left window
 nnoremap <leader>j :wincmd j<cr>|				" Go to the down window
 nnoremap <leader>k :wincmd k<cr>|				" Go to the up window
 nnoremap <leader>l :wincmd l<cr>|				" Go to the right window
 nnoremap <leader>f :Files<cr>|					" Open floating window for FZF file search
-nnoremap <leader>b :Buffer<cr>|					" Open floating window for FZF buffer search 
-nnoremap <leader>t :NERDTree<cr>|				" Open NERDTree
+nnoremap <leader>b :Buffer<cr>|					" Open floating window for FZF buffer search
+nnoremap <leader>m :Maps<cr>|					" Open floating window for FZF map search
+nnoremap <leader>t :NERDTreeToggle<cr>|			" Toggle NERDTree
 nnoremap <leader><tab> :vertical :terminal<cr>|	" Open a new terminal in vertical split
 nnoremap <leader>i :ALEFix<cr>|					" Fix code formatting
 vnoremap <leader>y "+y|							" Copy text to '+' register (Clipboard)
@@ -59,8 +62,15 @@ nnoremap <leader>q :Commentary<cr>|				" Comment the current line in normal mode
 nnoremap <tab> <C-^>|							" Switch between recently opened buffer
 nnoremap <leader>c :CocCommand<space>|			" Shortcut for writing ':CocCommand '
 nnoremap <leader>; :ALEDetail<cr>|				" Show ALE linting message(info/warning/error) in floating window
-nnoremap <leader>r :source $MYVIMRC<cr>|		" Source Vim config
+nnoremap <leader>rl :source $MYVIMRC<cr>|		" Source Vim config
 nnoremap <leader>v :e $MYVIMRC<cr>|				" Open $MYVIMRC
+nnoremap <silent><A-k> :m .-2<CR>==|			" Move line up
+nnoremap <silent><A-j> :m .+1<CR>==|			" Move line down
+inoremap <silent><A-k> <Esc>:m .-2<CR>==gi|		" Move line up
+inoremap <silent><A-j> <Esc>:m .+1<CR>==gi|		" Move line down
+vnoremap <silent><A-k> :m '<-2<CR>gv=gv|		" Move selected lines up
+vnoremap <silent><A-j> :m '>+1<CR>gv=gv|		" Move selected lines down
+
 
 """"" Custom commands """""
 " command! Reload :source $MYVIMRC
@@ -99,7 +109,7 @@ set smartcase
 syntax enable
 " Show status line for each window
 set laststatus=2
-" Show line number in front of each line 
+" Show line number in front of each line
 set number
 " Show line number relative to the line number of cursor
 set relativenumber
@@ -145,7 +155,7 @@ autocmd FocusLost * silent! wa
 " Save buffer when it gets hidden
 " autocmd BufHidden * w
 " Save modified buffers when many operations are performed like exiting vim
-set autowriteall 
+set autowriteall
 
 " }}}
 

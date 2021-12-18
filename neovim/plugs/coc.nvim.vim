@@ -42,4 +42,4 @@ endif
 inoremap <silent><expr> <C-k> coc#refresh()
 
 " Mapping for renaming a variable at all places it's used
-nmap <leader>rn <Plug>(coc-rename)
+nnoremap <leader>rn <Plug>(coc-rename)
