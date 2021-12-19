@@ -40,7 +40,6 @@ cnoremap kj <esc>
 tnoremap jk <C-\><C-n>
 tnoremap kj <C-\><C-n>
 
-" Hello there
 """"" Aliases """""
 nnoremap <leader>o o<esc>|						" Create new line below without exiting normal mode
 nnoremap <leader>u O<esc>|						" Create new line above without exiting normal mode
@@ -57,7 +56,6 @@ nnoremap <leader>i :ALEFix<cr>|					" Fix code formatting
 vnoremap <leader>y "+y|							" Copy text to '+' register (Clipboard)
 nnoremap <leader>p "+p|							" Paste text on next character/line from '+' register (Clipboard)
 nnoremap <leader>P "+P|							" Paste text on the current character from '+' register (Clipboard)
-nnoremap <leader>/ <c-v>|						" Enter Visual Block mode
 vnoremap q :Commentary<cr>|						" Comment the selected line in visual mode
 nnoremap <leader>q :Commentary<cr>|				" Comment the current line in normal mode
 nnoremap <tab> <C-^>|							" Switch between recently opened buffer
@@ -105,41 +103,39 @@ set smartcase
 
 " Custom UI & Options {{{
 
-
-syntax enable							" Enables syntax highlighting
-set laststatus=2						" Show status line for each window
-set number								" Show line number in front of each line
-set relativenumber						" Show line number relative to the line number of cursor
-set mouse=a                             " Enables the use of mouse in all modes
-set title								" Set the title of the window
-set background=dark						" Set colorscheme according to the background that's provided      
-set splitright							" Puts the new split window on the right side of the current window
-set cursorline							" Highlights the lint on which cursor is                           
-hi CursorLine cterm=none ctermbg=233	" Customizing the color of cursor
-hi Cursor cterm=none ctermbg=234		" Customizing the color of cursorline                                                                                        
-hi Visual cterm=none ctermbg=235		" Customizing the color of the selected text in visual mode        
-hi YcmErrorSection ctermbg=88           " Customizing the color of error lines                 
-hi YcmWarningSection ctermbg=238		" Customizing the color of warning lines                                                                                    
-set nowrap								" Long lines are not wrapped                                       
-set completeopt-=preview				" Don't show preview in another window                             
-filetype plugin on						" Loads the ftplugin/<filetype>.vim file when a file of <filetype> is edited
-set updatetime=100                      " Swap file will be written to disk every 100ms                             
+set laststatus=2								" Show status line for each window
+set number										" Show line number in front of each line
+set relativenumber								" Show line number relative to the line number of cursor
+set mouse=a										" Enables the use of mouse in all modes
+set title										" Set the title of the window
+set background=dark								" Set colorscheme according to the background that's provided
+set splitright									" Puts the new split window on the right side of the current window
+set cursorline									" Highlights the lint on which cursor is
+hi CursorLine cterm=none ctermbg=233			" Customizing the color of cursor
+hi Cursor cterm=none ctermbg=234				" customizing the color of cursorline
+hi Visual cterm=none ctermbg=235 guibg=Black	" Customizing the color of the selected text in visual mode
+hi YcmErrorSection ctermbg=88					" Customizing the color of error lines
+hi YcmWarningSection ctermbg=238				" Customizing the color of warning lines
+hi Whitespace guifg=#444444
+set nowrap										" Long lines are not wrapped
+set completeopt-=preview						" Don't show preview in another window
+filetype plugin on								" Loads the ftplugin/<filetype>.vim file when a file of <filetype> is edited
+syntax enable									" Enables syntax highlighting
+set updatetime=100								" Swap file will be written to disk every 100ms
+set nolist										" Don't show listchars
+set listchars=tab:→\ ,trail:␣,extends:…			" Characters to show for the specified invisible chars
 
 " }}}
 
 " Autosave {{{
 
-" Hides the current buffer while opening another buffer on current window,
-" instead of yelling to save the modified buffer first
-set hidden
-" Reads the file again if it's modified outside of Vim
-set autoread
-" Save all modified buffers when Vim loses focus
-autocmd FocusLost * silent! wa
-" Save buffer when it gets hidden
-" autocmd BufHidden * w
-" Save modified buffers when many operations are performed like exiting vim
-set autowriteall
+set hidden						" Hides the current buffer while opening another buffer on current window,
+								" instead of yelling to save the modified buffer first
+set autoread					" Reads the file again if it's modified outside of Vim
+autocmd FocusLost * silent! wa	" Save all modified buffers when Vim loses focus
+set autowriteall				" Save buffer when it gets hidden
+								" autocmd BufHidden * w
+								" Save modified buffers when many operations are performed like exiting vim
 
 " }}}
 
