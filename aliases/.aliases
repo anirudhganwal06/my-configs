@@ -7,7 +7,7 @@ EDITOR=vim
 
 # Aliases ------------------------------------------------------------------------
 
-# enable color support of ls and also add handy aliases
+# Enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
@@ -19,24 +19,28 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# some more ls aliases
+# Some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+# Always open terminal in full screen mode
+alias gnome-terminal='gnome-terminal --full-screen'
+
+
 # --------------------------------------------------------------------------------   
 
-# function for activating a python virtual environment ---------------------------
+# Function for activating a python virtual environment ---------------------------
 vactivate() {
 	source ~/.venvs/$1/bin/activate
 }
 
-# function for creating new python virtual environment ---------------------------
+# Function for creating new python virtual environment ---------------------------
 vnew() {
 	python3 -m venv ~/.venvs/$@
 }
 
-# function for connecting my Bluetooth Earbuds -----------------------------------
+# Function for connecting my Bluetooth Earbuds -----------------------------------
 bconnect() {
 	# Enables bluetooth
 	rfkill unblock bluetooth &&
